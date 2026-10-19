@@ -1,0 +1,25 @@
+{
+  "name": "cavuno",
+  "version": "1.0.0",
+  "description": "Run your Cavuno job board from Cursor: post and import jobs, manage employers, write blog posts and review performance through the hosted Cavuno MCP.",
+  "author": {
+    "name": "Cavuno",
+    "email": "hi@cavuno.com"
+  },
+  "homepage": "https://cavuno.com/docs/mcp",
+  "repository": "https://github.com/wollemiahq/cavuno-plugin",
+  "license": "MIT",
+  "keywords": [
+    "cavuno",
+    "job-board",
+    "jobs",
+    "recruiting",
+    "employers",
+    "seo",
+    "blog",
+    "monetization"
+  ],
+  "logo": "assets/cavuno.svg",
+  "skills": "skills",
+  "mcpServers": "./mcp.json"
+}

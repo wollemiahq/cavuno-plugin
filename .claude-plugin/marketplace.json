@@ -1,0 +1,20 @@
+{
+  "name": "cavuno",
+  "owner": {
+    "name": "Cavuno",
+    "email": "hi@cavuno.com",
+    "url": "https://cavuno.com"
+  },
+  "description": "Cavuno's official plugin marketplace",
+  "metadata": {
+    "description": "Cavuno's official plugin marketplace"
+  },
+  "plugins": [
+    {
+      "name": "cavuno",
+      "source": "./",
+      "version": "1.0.0",
+      "description": "Run your Cavuno job board from Claude: post and import jobs, manage employers, write blog posts and review performance."
+    }
+  ]
+}
