@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cavuno",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Run your Cavuno job board with AI agents: post and import jobs, manage employers, set up pricing, write and refresh blog posts, and review performance via the hosted Cavuno MCP.",
   "author": {
     "name": "Cavuno",

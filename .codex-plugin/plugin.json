@@ -1,6 +1,6 @@
 {
   "name": "cavuno",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cavuno workflows for running a job board: post and import jobs, manage employers, set up pricing, write and refresh blog posts, and review performance through the hosted Cavuno MCP.",
   "author": {
     "name": "Cavuno",

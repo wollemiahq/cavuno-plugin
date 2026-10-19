@@ -1,7 +1,7 @@
 {
   "name": "cavuno",
   "displayName": "Cavuno",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cavuno helps associations, publications, communities and standalone businesses launch, run and grow a job board with AI. This plugin connects Claude to your Cavuno board so it can post and import jobs, manage employers, set up pricing, write and refresh blog posts, review analytics and keep the board tidy, asking before every change.",
   "author": {
     "name": "Cavuno",
