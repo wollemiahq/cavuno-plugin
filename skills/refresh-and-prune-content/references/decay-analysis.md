@@ -87,8 +87,8 @@ Record before drafting: peak and recent windows; lost, declining, holding
 and emerging queries; recent impressions, CTR and position; the diagnosis;
 what to keep (sections, images, links, the queries still working); what
 the strongest current results add that the post lacks; and the concrete
-information gain (fresh job data, a decision framework, a current example
-set). "Make it longer" is not a brief.
+information gain (fresh job data, a decision framework, a current
+example). "Make it longer" is not a brief.
 
 Sources: https://cavuno.com/docs/mcp/cookbook/refresh-blog-posts-with-search-console,
 https://cavuno.com/docs/mcp/reference/search-console,
