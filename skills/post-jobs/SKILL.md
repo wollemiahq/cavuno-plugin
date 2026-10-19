@@ -32,7 +32,7 @@ creating new categories, skills or custom fields
    `applicationUrl`, `externalId`, `remoteOption` with locations or remote
    permits, employment type, seniority, salary.
 3. **Load the board's vocabulary once per conversation.** `read`
-   `/taxonomies/categories` (pass `search`) and `/taxonomies/skills`
+   `/taxonomies/categories` (with the `search` query parameter) and `/taxonomies/skills`
    (`search`), `/settings/job-form` for custom employment types and custom
    fields, and for remote roles `/taxonomies/remote-permits` and
    `/taxonomies/remote-timezones`. Map only to slugs that exist. When no

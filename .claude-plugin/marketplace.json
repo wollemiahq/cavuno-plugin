@@ -13,7 +13,7 @@
     {
       "name": "cavuno",
       "source": "./",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Run your Cavuno job board from Claude: post and import jobs, manage employers, write blog posts and review performance."
     }
   ]
