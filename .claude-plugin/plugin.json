@@ -1,0 +1,29 @@
+{
+  "name": "cavuno",
+  "displayName": "Cavuno",
+  "version": "1.0.0",
+  "description": "Cavuno helps associations, publications, communities and standalone businesses launch, run and grow a job board with AI. This plugin connects Claude to your Cavuno board so it can post and import jobs, manage employers, set up pricing, write and refresh blog posts, review analytics and keep the board tidy, asking before every change.",
+  "author": {
+    "name": "Cavuno",
+    "email": "hi@cavuno.com",
+    "url": "https://cavuno.com"
+  },
+  "homepage": "https://cavuno.com/docs/mcp",
+  "repository": "https://github.com/wollemiahq/cavuno-plugin",
+  "license": "MIT",
+  "keywords": [
+    "cavuno",
+    "job-board",
+    "jobs",
+    "recruiting",
+    "employers",
+    "seo",
+    "blog",
+    "monetization"
+  ],
+  "icon": "./.claude-plugin/icon.png",
+  "documentationUrl": "https://cavuno.com/docs/mcp",
+  "supportUrl": "https://cavuno.com/docs/troubleshooting",
+  "privacyPolicyUrl": "https://cavuno.com/privacy-policy",
+  "termsOfServiceUrl": "https://cavuno.com/terms-of-service"
+}
