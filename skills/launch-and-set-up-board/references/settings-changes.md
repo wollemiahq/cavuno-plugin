@@ -11,7 +11,7 @@
 | Identity | `name`, `slug`, `contactEmail`, `companyLegalName`, `companyAddress`, `companyWebsiteUrl`, social URLs (`companyXHandle`, `companyFacebookUrl`, `companyLinkedinUrl`, `companyInstagramUrl`) |
 | Domain | `primaryDomainId` (an active domain's `id` from `/domains`) |
 | Images | `logoMediaId`, `heroMediaId` (a media ID from an upload with purpose `board_logo` or `board_hero`) |
-| Features | `jobAlertsEnabled`, `blogEnabled`, `candidatesEnabled`, `employersEnabled`, `impressumEnabled`, `jobRecommendationsEnabled`, `recommendedTalentEnabled`, `applicantMessagingEnabled` |
+| Features | `jobAlertsEnabled`, `blogEnabled`, `candidatesEnabled`, `employersEnabled`, `jobRecommendationsEnabled`, `recommendedTalentEnabled`, `applicantMessagingEnabled` |
 | Posting and approval | `requireApprovalFreeJobs`, `requireApprovalAggregatedJobs`, `postingRequiresMembership`, `defaultJobDurationDays` |
 | Applications | `nativeApplicationsEnabled`, `applyUrlAttribution`, `countryGatingMode` (`sponsored_only` or `all_jobs`) |
 | Access | `registrationWallEnabled`, `signInMethods` (per role: `password`, `magicLink`, `google`, `linkedin`) |
@@ -20,6 +20,10 @@
 | Branding | `showCavunoBranding` (plan-gated) |
 
 Contact and company fields accept `null` to clear.
+
+`impressumEnabled` is deprecated: current sites publish their Impressum page
+when the site has Impressum content, so there is no switch to set. A site built
+from an older starter still needs it set to `true` to show the page.
 
 ## High-impact settings (own confirmation each)
 
