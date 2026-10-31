@@ -35,6 +35,7 @@ on every write anyway, as `cavuno-basics` says.
 | Members-only posting | PATCH `/settings` `postingRequiresMembership` | No |
 | Payment connection status | GET `/billing/connect` | n/a |
 | Stripe onboarding link | POST `/billing/connect/onboarding-link` | No; a person completes it |
+| Digital products, their files, sales and reviews | See [digital-products.md](digital-products.md) | Only `PUT /plans/{id}/price` |
 | Upgrade Cavuno's own plan | POST `/billing/upgrade` (`planKey`, `interval`) | Yes; returns a hosted URL for the person, never pay |
 
 ## Coupon and promotion code fields
@@ -59,6 +60,10 @@ These have no API operation. Give the path, then each field with its value.
   the job seeker product.
 - Assign or revoke a membership: Companies → row menu → Manage membership.
 - Tax: Settings → Products → Taxes (read-only; changes happen in Stripe).
+- Refund a board sale, or end or restore what it bought (digital product
+  access included): Transactions → row menu → Refund… / End access….
+- Upload digital product files: Settings → Products → the product →
+  Content → Add files.
 
 ## Stripe payment connection
 
@@ -97,11 +102,12 @@ order has nothing to tax.
 
 ## What lives only in Stripe
 
-Refunds, cancelling an employer subscription, payment retries for failed
+Cancelling an employer subscription, payment retries for failed
 renewals, bank-transfer payment methods, Stripe Tax registrations, and
 revenue reports such as MRR and churn (Stripe Reports → Revenue).
 
 Sources: https://cavuno.com/docs/monetization/connect-stripe,
+https://cavuno.com/docs/monetization/digital-products,
 https://cavuno.com/docs/monetization/create-pricing-plans,
 https://cavuno.com/docs/monetization/discount-codes,
 https://cavuno.com/docs/monetization/job-seeker-paywall,

@@ -22,6 +22,7 @@ Every product is a plan (`/plans`). `purpose` says what it entitles.
 | Company membership (member rate, included posts) | `membership` | `free`, `one_time`, `subscription` |
 | Paid access for job seekers | `job_seeker` | `subscription` |
 | A service with no posting or access entitlement (retainer, branding package) | `employer_service` or `job_seeker_service` | any, usually with `pricingMode: contact` |
+| A downloadable file or link (template, report, guide, booking link) | `digital_product` | `free` or `one_time`; see [digital-products.md](digital-products.md) |
 
 `kind` meanings (from the docs):
 
