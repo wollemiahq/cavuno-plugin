@@ -1,6 +1,6 @@
 ---
 name: set-up-monetization
-description: Plans and changes how a Cavuno job board earns money, covering employer plans and their features (post limits, duration, featured slots), featured jobs, member pricing, contact-led service plans, discount coupons and promotion codes, the job seeker paywall and the Stripe payment connection, and reports revenue from transactions and employer subscriptions. Shows a before/after of every change and flags anything that affects live checkout. Use when the user says "set up pricing for our job board", "add a $299 featured job plan", "create a 20% launch discount code", "turn off the job seeker paywall", "give member companies a discount", "is Stripe connected?" or "how much did we make last month?".
+description: Plans and changes how a Cavuno job board earns money, covering employer plans and their features (post limits, duration, featured slots), featured jobs, member pricing, contact-led service plans, digital products (downloadable files and links, their sales and reviews), discount coupons and promotion codes, the job seeker paywall and the Stripe payment connection, and reports revenue from transactions and employer subscriptions. Shows a before/after of every change and flags anything that affects live checkout. Use when the user says "set up pricing for our job board", "add a $299 featured job plan", "create a 20% launch discount code", "turn off the job seeker paywall", "give member companies a discount", "sell our salary report as a $29 download", "resend Ada her download link", "is Stripe connected?" or "how much did we make last month?".
 ---
 
 # Set up monetization
@@ -11,7 +11,7 @@ Follow the `cavuno-basics` skill for tool use, confirmations and read-back.
 
 Use for anything an employer or job seeker pays for: plans, plan features,
 prices, featured placement, coupons, promotion codes, the paywall, membership
-pricing, service plans, payment readiness and revenue figures.
+pricing, service plans, digital products, payment readiness and revenue figures.
 
 Not for: Cavuno's own subscription for the board (Settings → Billing; plan
 facts at `/billing/subscription`), traffic or apply-click reports
@@ -34,7 +34,11 @@ facts at `/billing/subscription`), traffic or apply-click reports
    [references/products-and-features.md](references/products-and-features.md):
    `kind`, `purpose`, `pricingMode`, feature keys and values. `kind`,
    `purpose` and billing interval cannot be changed after creation, so get
-   them right first.
+   them right first. For a downloadable file or link (template, report,
+   guide, booking link) follow
+   [references/digital-products.md](references/digital-products.md): its
+   price and product fields go in `digitalProduct`, and its files and sales
+   have their own operations.
 4. **Write the plan as a table** with one row per product: name, kind,
    purpose, price (currency and amount), features in plain words ("5 jobs
    live at once, 2 featured, 30 days"), public or private, and what changes
@@ -105,10 +109,15 @@ Done when:
   and attribute any figure to its source.
 - Stripe Connect details, tax (Stripe Tax), refunds, cancellations and ad
   settings live in the Stripe or Cavuno dashboard; never complete a payment.
+- A digital product starts unlisted; listing it, deleting a file (past
+  buyers lose it) and turning on PDF stamping for a product with sales each
+  get their own confirmation. The connector cannot upload file bytes: hand
+  file uploads to the dashboard.
 
 ## References
 
 - [references/products-and-features.md](references/products-and-features.md): plan kinds, purposes, feature keys and values, featured jobs, memberships, services.
+- [references/digital-products.md](references/digital-products.md): digital product fields, files and links, sales actions, reviews and webhooks.
 - [references/connector-handoffs.md](references/connector-handoffs.md): every monetization operation, which need an idempotency key, dashboard-only steps, Stripe connection, no-charge testing.
 - [references/revenue-reporting.md](references/revenue-reporting.md): transactions, subscriptions, totals and past-due invoices.
 - [references/pricing-guidance.md](references/pricing-guidance.md): how to choose, test and change prices, with sourced figures only.
