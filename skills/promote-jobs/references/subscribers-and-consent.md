@@ -83,7 +83,7 @@ someone who asked to stop; only on their own request.
 
 ## Dashboard-only tasks
 
-Export the list (Job alerts → **...** → Export), import a CSV, resend a
+Export the list (Email subscribers → **...** → Export), import a CSV, resend a
 confirmation email, and edit email templates (Email editor).
 
 Sources: https://cavuno.com/docs/job-alerts,

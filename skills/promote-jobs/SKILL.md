@@ -76,7 +76,7 @@ Done when:
   asked; Cavuno has no tool for it. Draft, then hand over.
 - No subscriber emails in chat beyond the person the user asked about. Do
   not page through `/subscribers` to rebuild a list or export; route
-  exports to the dashboard (Job alerts → **...** → Export).
+  exports to the dashboard (Email subscribers → **...** → Export).
 - Unsubscribe, resubscribe and withdraw only when the user names a specific
   person and asks for that change. A vague "clean up the list" gets a
   count by status and the dashboard route, not bulk unsubscribes.
