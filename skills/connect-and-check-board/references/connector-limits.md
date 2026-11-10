@@ -8,7 +8,7 @@
 | Claude Code | `claude mcp add --transport http cavuno https://mcp.cavuno.com/mcp`, then run `/mcp`, pick Cavuno and sign in. |
 | Cursor, Codex, ChatGPT developer mode | Add `https://mcp.cavuno.com/mcp` as a remote MCP server; the client opens a browser to sign in. |
 
-The Cavuno dashboard has the server URL under Settings → Integrations → MCP.
+The Cavuno dashboard has the server URL under Settings → Integrations → Admin MCP.
 No API key is needed for this sign-in. Cavuno grants the single
 `full_access` scope, but every call is still checked against the user's
 current role on the board.
