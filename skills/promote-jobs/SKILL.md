@@ -76,7 +76,7 @@ Done when:
   asked; Cavuno has no tool for it. Draft, then hand over.
 - No subscriber emails in chat beyond the person the user asked about. Do
   not page through `/subscribers` to rebuild a list or export; route
-  exports to the dashboard (Job alerts → **...** → Export).
+  exports to the dashboard (Email subscribers → **...** → Export).
 - Unsubscribe, resubscribe and withdraw only when the user names a specific
   person and asks for that change. A vague "clean up the list" gets a
   count by status and the dashboard route, not bulk unsubscribes.
@@ -89,6 +89,6 @@ Done when:
 ## References
 
 - [references/digest-formats.md](references/digest-formats.md): newsletter, LinkedIn, X and Facebook formats, UTM scheme, copy rules.
-- [references/subscribers-and-consent.md](references/subscribers-and-consent.md): subscriber states, count semantics, unsubscribe and consent actions.
+- [references/subscribers-and-consent.md](references/subscribers-and-consent.md): contacts (everyone the board can email, with one-call stop everything), subscriber states, count semantics, unsubscribe and consent actions.
 - [references/channel-playbook.md](references/channel-playbook.md): which channel for which side of the board, cadence and listing the board in directories.
 - [examples/weekly-digest.md](examples/weekly-digest.md): a weekly digest from query to draft.
