@@ -2,6 +2,7 @@
 
 ## Contents
 
+- Contacts: everyone the board can email
 - Subscriber states
 - Counting subscribers
 - Look up one person
@@ -9,6 +10,36 @@
 - Marketing consent
 - What Cavuno sends on its own
 - Dashboard-only tasks
+
+## Contacts: everyone the board can email
+
+`/contacts` lists each person once, whatever they get: job alerts, job
+matches or marketing email. Use it for "who can my board email", for one
+person's whole picture, and for "stop everything". `/subscribers` below is
+the job alert view only.
+
+| Call | Returns |
+| --- | --- |
+| `read` `/contacts` | Newest first. Filters: `status` (`subscribed`, `pending`, `waitlisted`, `unsubscribed`, `suppressed`), `subscription` (`job_alerts`, `job_matches`, `marketing`), `role`, `source`, `search` (email substring). |
+| `read` `/contacts/{id}` | `status`, `suppressionReason` (`hard_bounce`, `spam_report`, `blocked`), `subscriptions[]` (`kind`, `status`, `since`, marketing's `consentText`), `source`, `subscribedAt`, `lastEmail`. |
+| `read` `/contacts/{id}/emails` | What was sent and whether it was delivered, delayed or bounced, with the reason. Opens and clicks are never recorded. |
+| `read` `/contacts/{id}/activity` | Signed up, confirmed, waitlisted, unsubscribed, suppressed, with dates. |
+| `read` `/contacts/{id}/job-alerts` | Each alert's filters and frequency. |
+
+Writes need `alerts.manage`. Confirm each one by email address first, then
+read `/contacts/{id}` back.
+
+| Action | Call | Effect |
+| --- | --- | --- |
+| Stop everything | `create` `/contacts/{id}/unsubscribe` | Job alerts, job matches and marketing all off, recorded as the team's. |
+| Turn one off | `delete` `/contacts/{id}/subscriptions/{kind}` | That stream only. Job alerts stay saved but stop; marketing is withdrawn as `operator_request`. |
+| Delete one alert | `delete` `/contacts/{id}/job-alerts/{alertId}` | Permanent; the person's other alerts keep sending. |
+| Bring back | `create` `/contacts/{id}/resubscribe` | `outcome: resubscribed` when the team made every unsubscribe and the address is confirmed: everything comes back at once. Otherwise, when job alerts are off, `confirmation_sent` (or `confirmation_send_failed`): whatever the team turned off comes back now, the job alerts come back when the person clicks the emailed link, and anything the person turned off stays off. 409 `contacts_not_resubscribable` when only job matches or marketing the person turned off themselves are off (only they can turn those back on), or the contact isn't unsubscribed. 429 `contacts_confirmation_throttled` when a confirmation went out in the last 2 minutes. |
+
+Nobody can add a subscription for a person. Only their own opt-in does.
+The same commands exist in the CLI as `cavuno contacts` (`list`, `get`,
+`emails`, `activity`, `job-alerts`, `unsubscribe`, `remove-subscription`,
+`remove-job-alert`, `resubscribe`).
 
 ## Subscriber states
 
@@ -52,7 +83,7 @@ confirmation email.
 | Action | Call | Effect |
 | --- | --- | --- |
 | Unsubscribe | `create` `/subscribers/{id}/unsubscribe` | Sets `unsubscribedAt`, deactivates the person's alerts; stops job alerts and matching emails. The next waitlisted person can be promoted. |
-| Resubscribe | `create` `/subscribers/{id}/resubscribe` | Clears `unsubscribedAt` and reactivates alerts after email confirmation; waitlisted if the allowance is full. |
+| Resubscribe | `create` `/subscribers/{id}/resubscribe` | Undoes an unsubscribe the team made: clears `unsubscribedAt` and reactivates alerts; waitlisted if the allowance is full. A 409 `subscribers_confirmation_required` means the person unsubscribed themselves or never confirmed: use `/contacts/{id}/resubscribe`, which emails them a confirmation link. |
 
 Both need `alerts.manage`. Confirm each one by email address, then read
 `/subscribers/{id}` back and report `unsubscribedAt`. Never resubscribe
@@ -69,7 +100,7 @@ someone who asked to stop; only on their own request.
   person asks the operator directly to stop marketing email. Re-withdrawing
   changes nothing.
 - Withdrawal and unsubscribing are separate records. For "stop all emails",
-  propose both and confirm them together.
+  use `/contacts/{id}/unsubscribe`, which does both.
 
 ## What Cavuno sends on its own
 
@@ -83,7 +114,7 @@ someone who asked to stop; only on their own request.
 
 ## Dashboard-only tasks
 
-Export the list (Job alerts → **...** → Export), import a CSV, resend a
+Export the list (Email subscribers → **...** → Export), import a CSV, resend a
 confirmation email, and edit email templates (Email editor).
 
 Sources: https://cavuno.com/docs/job-alerts,
