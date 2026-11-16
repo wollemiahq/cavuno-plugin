@@ -31,7 +31,7 @@ password; content is kept.
 | Job categories match the niche | `/taxonomies/categories/tree` | `organize-taxonomy-and-fields` |
 | Job form asks for what the niche needs | `/settings/job-form`, `/settings/form-layouts` | Job form |
 | Approval rules chosen | `/settings`: `requireApprovalFreeJobs`, `requireApprovalAggregatedJobs` | Settings |
-| Job alerts on | `/settings`: `config.jobAlertsEnabled` | Settings |
+| Job alerts on | `/settings`: `config.jobAlertsEnabled` (on when unset) | Settings |
 | Default job duration chosen | `/settings`: `config.defaultJobDurationDays` (30 days when unset) | Settings |
 | Old site's URLs redirected (migrations) | `/redirects` | Redirects |
 | Payments set up, if charging employers | Dashboard: Settings → Products | `set-up-monetization` |
