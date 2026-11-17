@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+- `set-up-monetization` covers digital products: creating and listing them,
+  their files and links, sales actions (correct email, reset downloads,
+  resend link), reviews and webhooks, in a new `digital-products.md`
+  reference. Refunds and ending access are now listed as Transactions steps
+  in the Cavuno dashboard.
+- The job field rules say what happens now when a field is deleted or
+  renamed: its values are deleted, and its key can be used again once they
+  are gone.
+
 ## 1.0.1 — 2026-10-20
 
 - Reworded two skill lines that the plugin directory's scanner read as credential access.
