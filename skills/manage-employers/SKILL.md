@@ -42,7 +42,9 @@ companies over from another platform (`migrate-from-another-platform`).
    and jobs off the board; omitted or `false` keeps the profile and
    archives published jobs. Check `removed`, `removal_scheduled` and
    `was_already_blocked` in the response. `create` `/companies/{id}/unblock`
-   does not republish archived jobs.
+   does not republish archived jobs. To bring back a deleted company, use
+   `create` `/companies/{id}/restore`: it stays excluded from backfill
+   unless you pass `{ allow_backfill: true }`.
 
 ## Steps: employer accounts
 
