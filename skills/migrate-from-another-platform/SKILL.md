@@ -29,7 +29,7 @@ Not here: ongoing feeds or careers-page syncs after launch
 2. **Route each data type** with the table in
    [references/migration-plan.md](references/migration-plan.md). Large
    files go through the dashboard importer (Jobs → Import, Companies →
-   Import, Job Alerts → Import); the connector cannot upload files.
+   Import, Email subscribers → Import); the connector cannot upload files.
    Through the API: companies, jobs and redirects in batches.
 3. **Read the target board.** `read` `/usage` (`active_jobs.remaining`
    against the number of live jobs to bring), `/settings/job-form`,
