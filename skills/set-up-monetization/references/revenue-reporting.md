@@ -7,6 +7,7 @@
 | Payments and invoices in a period | `/transactions` | Newest first by `date`. Filters: `status` (`paid`, `open`, `void`, `uncollectible`), `kind` (`card_post`, `invoice`, `subscription`, `service`), `search`. No date filter: page with `cursor` until rows are older than the start date. |
 | One transaction | `/transactions/{id}` | `hostedInvoiceUrl`, `receiptUrl` for the user to open. |
 | Recurring employer customers | `/employer-subscriptions` | Filters: `status`, `companyId`. Fields: `planName`, `companyName`, `status`, `currentPeriodEnd`, `cancelAtPeriodEnd`. |
+| One digital product's sales and free claims | `/plans/{id}/purchases` | Paid sales also appear on `/transactions` (`transactionId`); free claims only here. Contains emails; report counts. |
 | Candidate paywall subscribers | `/paywall/subscriptions` | Filters: `status`, `kind` (`recurring`, `lifetime`). Contains emails; report counts. |
 | Revenue next to traffic | `/analytics/overview` | `stripe_revenue` metric when available; see the `review-performance` skill. |
 
@@ -40,8 +41,9 @@ Cavuno publishes no revenue benchmark by stage; do not supply one.
 
 Monthly recurring revenue, churn and revenue by plan are in the Stripe
 Dashboard under Reports → Revenue. Refunds, voiding and resending invoices
-happen in the dashboard (Transactions row menu, owners and admins) or
-Stripe, not through the connector.
+happen in the dashboard (Transactions row menu, owners and admins) or Stripe.
+Refunds also have API routes (`POST /v1/transactions/{id}/refunds`), but the
+connector has no refund tools, so hand them to the user.
 
 ## Pitfalls
 
