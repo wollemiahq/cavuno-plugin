@@ -86,7 +86,7 @@ Done when:
   stays connected keeps redirecting to the primary; removing it stops that.
 - **Custom field arrays replace everything.** A `PUT` without an existing
   field deletes it. Changing a field's `type` is rejected (422
-  `settings_custom_field_type_immutable`); renaming a `key` orphans the values
+  `settings_custom_field_type_immutable`); renaming a `key` deletes the values
   stored under the old key.
 - **Board slug and sign-in methods are URL and access changes.** Treat
   `slug`, `signInMethods`, `registrationWallEnabled` and
