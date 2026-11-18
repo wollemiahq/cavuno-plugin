@@ -43,10 +43,10 @@ Rules:
 2. Changing `type` on an existing key returns 422
    `settings_custom_field_type_immutable`. To change type, remove the field
    and add a new one with a new key, after the user agrees.
-3. Renaming a `key` is a delete plus an add; values under the old key are
-   orphaned.
-4. A deleted private field's key cannot be reused (400), so its answers stay
-   private.
+3. Renaming a `key` is a delete plus an add. Deleting a field deletes its
+   values on every job.
+4. Until a deleted field's values are gone, adding a field with its key
+   returns 400, so old answers never show under a new field. Retry shortly.
 5. On Cavuno-hosted boards custom fields are display only (an "Additional
    details" section on the job page). Boards built with the AI website
    builder or the SDK can also filter by select and boolean fields.
