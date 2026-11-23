@@ -4,7 +4,7 @@ type: llm
 
 PASS if the reply says the CSV files cannot be uploaded through the
 connector and points to the dashboard importers (Jobs → Import, Companies →
-Import, Job Alerts → Import), puts companies before jobs, mentions keeping
+Import, Email subscribers → Import), puts companies before jobs, mentions keeping
 the old job IDs (external IDs) or deduplication, includes setting up 301
 redirects from old URLs, warns that imported subscribers should have
 consented, and mentions checking active-job capacity or a small rehearsal
