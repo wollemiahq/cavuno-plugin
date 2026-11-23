@@ -19,8 +19,9 @@ runs once. On the connector, pass it as the `idempotencyKey` argument of
 - Generate a fresh key for each distinct request: letters, digits, hyphens
   and underscores, 255 characters at most, for example
   `coupon-launch20-7f3k9q`.
-- Reuse a key only to retry the identical request after a timeout or 5xx.
-  A changed body needs a new key.
+- Reuse a key only to retry the identical request after a timeout, a 5xx,
+  or an error that carries `details.retryAfterSeconds`. A changed body
+  needs a new key.
 - If a retry without a key is unavoidable, read the list first (for jobs,
   filter by `externalId`) and retry only if the first attempt did not land.
 
@@ -81,6 +82,7 @@ A failed call returns `data.error = { code, message, details?, requestId? }`.
 | 401 | Not signed in, or the sign-in expired. | Ask the user to reconnect Cavuno. |
 | 403 | The user's role or plan does not allow it. | Say which permission is missing; do not look for a way around it. |
 | 404 | Wrong ID or path. | Look the record up again. |
+| 409 `concurrency_conflict` | Another write changed the same records at the same moment. | Wait `details.retryAfterSeconds`, then send the same request with the same key. |
 | 409 | Conflict, such as a duplicate. | Read `details`; see above. |
 | 429 | Rate limited. | Wait for `Retry-After`, then continue. |
 | 5xx | Cavuno-side failure. | Retry once later; if it repeats, report it with the `requestId`. |
