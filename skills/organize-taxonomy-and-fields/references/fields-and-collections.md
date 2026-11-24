@@ -28,8 +28,9 @@ yes/no fields.
 Endpoint: `PUT /settings/job-form/custom-fields` `{ customFields: [...] }`,
 whole-list replace. Types: `short_text`, `long_text`, `rich_text`,
 `single_select`, `multi_select`, `boolean`, `number`. Type changes are
-rejected (422); renaming a key orphans its values; a deleted private field's
-key cannot be reused. Full field rules are in `launch-and-set-up-board`.
+rejected (422); renaming or deleting a key deletes its values, and the key
+can be used again once they are gone. Full field rules are in
+`launch-and-set-up-board`.
 
 ## Company and talent profile fields
 
