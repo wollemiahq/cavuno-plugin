@@ -15,6 +15,7 @@
 | Gone, and to stay gone | `create` `/companies/{id}/block` `{ remove: true, reason }`, or `delete` `/companies/{id}` with `{ block: "true" }` | Removed; public URL shows not found | Removed | No, until unblocked |
 | Keep the page, stop pulling its jobs from feeds | `create` `/companies/{id}/block` `{ remove: false, reason }` | Kept | Published jobs archived; drafts untouched | No |
 | A one-off cleanup | `delete` `/companies/{id}` | Deleted permanently | Deleted permanently | Yes, if it still matches the board's sources |
+| Bring a deleted company back | `create` `/companies/{id}/restore`, optionally `{ allow_backfill: true }` | Returns as an empty profile | Removed jobs are not restored | Only with `allow_backfill: true` |
 | Bring a blocked company back | `create` `/companies/{id}/unblock` | A removed company returns as an empty profile | Archived or removed jobs are not restored | Yes |
 
 `block=true` on delete is ignored when another company on the board shares
