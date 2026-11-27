@@ -85,7 +85,8 @@ Use this for a blog cover, a company logo or a board logo or hero.
 
 1. Call `create_media_upload_intent` with `filename`, `mimeType`, the exact
    `sizeBytes` (10 MB at most) and `purpose`: one of `board_logo`,
-   `board_hero`, `account_avatar`, `company_logo`, `blog_image`.
+   `board_hero`, `account_avatar`, `company_logo`, `blog_image`, `help_image`,
+   `help_icon`.
 2. POST the raw file bytes to the returned `uploadUrl` with the file's real
    `Content-Type`. The response holds a `storageId`. This step needs a
    client that can send HTTP requests with a file, such as Claude Code. In a
