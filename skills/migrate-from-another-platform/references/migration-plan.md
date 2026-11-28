@@ -17,7 +17,7 @@
 | Ongoing partner feed | Dashboard: Backfill → Feeds | See the `source-jobs` skill. |
 | Companies, large file | Dashboard: Companies → Import (CSV or XML) | Create-only: an existing company (by domain, then name) is adopted, not overwritten. Logos are downloaded from a `logo` URL. |
 | Companies, rows Claude can read | `POST /companies/batch`, 100 per call, 5 MB body | 409 per entry when the domain or name exists. |
-| Job alert subscribers | Dashboard only: Job Alerts → Import (CSV with `email`) | Auto-confirmed, no confirmation email, weekly alert. A non-empty `unsubscribed` column skips the row. |
+| Job alert subscribers | Dashboard only: Email subscribers → Import (CSV with `email`) | Auto-confirmed, no confirmation email, weekly alert. A non-empty `unsubscribed` column skips the row. |
 | Employer accounts | Not importable | Employers sign up or are invited; domain match approves them. |
 | Candidate accounts and resumes | Not importable through the connector | Ask Cavuno support (hi@cavuno.com) before promising candidates their accounts move. |
 | Blog posts | `write-blog-post` skill, as drafts | Redirect their old URLs here. |
